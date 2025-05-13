@@ -52,17 +52,24 @@ public class UserController {
 
     @PostMapping("/doLogin")
     public ResponseEntity<?> doLogin(@RequestBody UserLoginDto userLoginDto){
-//        email, password 일치한지 검증
-        User user = userService.login(userLoginDto);
+        try {
+            // email, password 일치한지 검증
+            User user = userService.login(userLoginDto);
 
-//        일치할 경우 jwt accesstoken 생성
-        String jwtToken = jwtTokenProvider.createToken(user.getEmail(), user.getRole().toString());
+            // 일치할 경우 jwt accesstoken 생성
+            String jwtToken = jwtTokenProvider.createToken(user.getEmail(), user.getRole().toString());
 
-        Map<String, Object> loginInfo = new HashMap<>();
-        loginInfo.put("id", user.getId());
-        loginInfo.put("token", jwtToken);
-        return new ResponseEntity<>(loginInfo, HttpStatus.OK);
+            Map<String, Object> loginInfo = new HashMap<>();
+            loginInfo.put("id", user.getId());
+            loginInfo.put("token", jwtToken);
+            return new ResponseEntity<>(loginInfo, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", e.getMessage());
+            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        }
     }
+
 
 /*    @PostMapping("/google/doLogin")
     public ResponseEntity<?> googleLogin(@RequestBody RedirectDto redirectDto){

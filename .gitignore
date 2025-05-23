@@ -36,8 +36,7 @@ out/
 ### VS Code ###
 .vscode/
 
-application.yml
-application-secret.yml
+
 *~
 
 # .yml 파일을 무시하지 않도록 설정

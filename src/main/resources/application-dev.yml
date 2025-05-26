@@ -15,8 +15,8 @@ spring:
       client:
         registration:
           google:
-            client-id:  # ?? ?? Client ID
-            client-secret:  # ?? ?? Client Secret
+            client-id: 24685883095-m1obadjrnp9hdo6gs16sae9n89gmqklq.apps.googleusercontent.com # ?? ?? Client ID
+            client-secret: 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 # ?? ?? Client Secret
             scope: openid, email, profile
             redirect-uri: http://localhost:8080/login/oauth2/code/google
             authorization-grant-type: authorization_code
@@ -36,14 +36,14 @@ logging:
 
 jwt:
   secret: b2F1dGhzZXJ2ZXJzZWNyZXRhY2Nlc3N0b2tlbm9hdXRoc2VydmVyc2VjcmV0YWNjZXNzdG9rZW9hdXRoc2VydmVyc2VjcmV0YWNjZXNzdG9rZW5vYXV0aHNlcnZlcnNlY3JldGFjY2Vzc3Rva2Vu
-  expiration: 3000 # ? ??
+  expiration: 3000
 
 oauth:
   google:
-    client-id:  # ?? ?? Client ID
-    client-secret:  # ?? ?? Client Secret
+    client-id: 24685883095-m1obadjrnp9hdo6gs16sae9n89gmqklq.apps.googleusercontent.com # ?? ?? Client ID
+    client-secret: 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 # ?? ?? Client Secret
     redirect-uri: http://localhost:3000/oauth/google/redirect
   kakao:
-    client-id:  # ?? ?? Client ID
-    client-secret:  # ?? ?? Client Secret
+    client-id: 1fd78124bd0e821625d4167a3bc8c59f # ?? ?? Client ID
+    client-secret: 2j2ADZmKMuTvOaljgkEoCCbkgrsUngwx # ?? ?? Client Secret
     redirect-uri: http://localhost:3000/oauth/kakao/redirect

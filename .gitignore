@@ -36,7 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-
 *~
 
 # .yml 파일을 무시하지 않도록 설정

@@ -68,7 +68,13 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/actuator/**", "/error" ,"/favicon.ico");
+        return (web) -> web.ignoring().requestMatchers(
+                "/actuator/**",
+                "/user/actuator/**",  // 외부 경로 추가
+                "/error",
+                "/favicon.ico"
+        );
     }
+
 
 }

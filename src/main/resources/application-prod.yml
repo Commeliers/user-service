@@ -48,3 +48,14 @@ oauth:
     client-id: 1fd78124bd0e821625d4167a3bc8c59f # ?? ?? Client ID
     client-secret: 2j2ADZmKMuTvOaljgkEoCCbkgrsUngwx # ?? ?? Client Secret
     redirect-uri: http://localhost:3000/oauth/kakao/redirect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      show-details: always

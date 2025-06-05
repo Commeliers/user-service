@@ -70,7 +70,9 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers(
                 "/actuator/**",
-                "/user/actuator/**",  // 외부 경로 추가
+                "/user/actuator/**",
+                "/user/api/**",
+                "/user/metrics",
                 "/error",
                 "/favicon.ico"
         );

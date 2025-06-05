@@ -42,7 +42,7 @@ public class SecurityConfig {
 //                세션방식을 비활성화
                 .sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 //                특정 url패턴에 대해서는 인증처리(Authentication객체생성) 제외
-                .authorizeHttpRequests(a->a.requestMatchers("/user/create", "/user/doLogin", "/user/logout", "/user/google/doLogin", "/user/kakao/doLogin", "/oauth2/**",
+                .authorizeHttpRequests(a->a.requestMatchers("/actuator/**","/user/create", "/user/doLogin", "/user/logout", "/user/google/doLogin", "/user/kakao/doLogin", "/oauth2/**",
                         "/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**").permitAll().anyRequest().authenticated())
 //                UsernamePasswordAuthenticationFilter 이 클래스에서 폼로그인 인증을 처리
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)

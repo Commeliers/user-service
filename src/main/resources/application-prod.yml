@@ -9,7 +9,15 @@ spring:
   data:
     mongodb:
       uri: mongodb://admin:homeprotector2025!@10.0.51.19:27017/homeprotector?authSource=admin
-
+      # 연결 풀 설정
+      options:
+        max-connection-pool-size: 100
+        min-connection-pool-size: 10
+        max-connection-idle-time: 30000
+        max-connection-life-time: 600000
+        connect-timeout: 10000
+        socket-timeout: 45000
+        server-selection-timeout: 5000
 
   security:
     oauth2:

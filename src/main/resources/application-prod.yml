@@ -58,3 +58,10 @@ management:
       enabled: true
     health:
       show-details: always
+      group:
+        startup:
+          include: readinessState, livenessState
+        readiness:
+          include: readinessState
+        liveness:
+          include: livenessState
